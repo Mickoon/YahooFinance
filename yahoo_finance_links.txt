@@ -1,0 +1,3 @@
+https://nz.finance.yahoo.com/q?p=finance.yahoo.com&s=ANZ.AX&ql=0
+https://nz.finance.yahoo.com/q?p=finance.yahoo.com&s=QAN.AX&ql=0
+https://nz.finance.yahoo.com/q?p=finance.yahoo.com&s=WBC.AX&ql=0

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8b29ac5d3bd249c8bdf5efb010b69cd5" Name="Diagram1" ZoomLevel="71" >
+        <EntityTypeShape EntityType="FinanceCrawlerModel.YahooFinance_Analyst_Opinion" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="FinanceCrawlerModel.YahooFinance_Analyst_Estimates" Width="1.5" PointX="2.75" PointY="0.5" />
+        <EntityTypeShape EntityType="FinanceCrawlerModel.YahooFinance_Market_Data" Width="1.5" PointX="4.625" PointY="0.5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

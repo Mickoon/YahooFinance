@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FinanceCrawlerModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="FinanceCrawlerModelStoreContainer">
+          <EntitySet Name="YahooFinance_Analyst_Estimates" EntityType="FinanceCrawlerModel.Store.YahooFinance_Analyst_Estimates" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="YahooFinance_Analyst_Opinion" EntityType="FinanceCrawlerModel.Store.YahooFinance_Analyst_Opinion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="YahooFinance_Market_Data" EntityType="FinanceCrawlerModel.Store.YahooFinance_Market_Data" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="YahooFinance_Analyst_Estimates">
+          <Key>
+            <PropertyRef Name="Identity" />
+          </Key>
+          <Property Name="Identity" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Price" Type="numeric" Nullable="false" Scale="2" />
+          <Property Name="Recorded_Date" Type="datetime" Nullable="false" />
+          <Property Name="Current_Qtr" Type="datetime" />
+          <Property Name="Next_Qtr" Type="datetime" />
+          <Property Name="Current_Year" Type="datetime" />
+          <Property Name="Next_Year" Type="datetime" />
+          <Property Name="Earning_Est_Current_Year_Avg.Estimate" Type="numeric" Scale="2" />
+          <Property Name="Earning_Est_Next_Year_Avg.Estimate" Type="numeric" Scale="2" />
+          <Property Name="Earning_Est_Current_Year_Year_Ago_EPS" Type="numeric" Scale="2" />
+          <Property Name="Earning_Est_Next_Year_Year_Ago_EPS" Type="numeric" Scale="2" />
+          <Property Name="Revenue_Est_Current_Year_Avg.Estimate" Type="numeric" Scale="2" />
+          <Property Name="Revenue_Est_Next_Year_Avg.Estimate" Type="numeric" Scale="2" />
+          <Property Name="Revenue_Est_Current_Year_Year_Ago_Sales" Type="numeric" Scale="2" />
+          <Property Name="Revenue_Est_Next_Year_Year_Ago_Sales" Type="numeric" Scale="2" />
+          <Property Name="Earnings_History_Current_Year_EPS_Est" Type="numeric" Scale="2" />
+          <Property Name="Earnings_History_Next_Year_EPS_Est" Type="numeric" Scale="2" />
+          <Property Name="Earnings_History_Current_Year_EPS_Actual" Type="numeric" Scale="2" />
+          <Property Name="Earnings_History_Next_Year_EPS_Actual" Type="numeric" Scale="2" />
+          <Property Name="Earnings_History_Current_Year_Difference" Type="numeric" Scale="2" />
+          <Property Name="Earnings_History_Next_Year_Difference" Type="numeric" Scale="2" />
+          <Property Name="Earnings_History_Current_Year_Surprise(%)" Type="numeric" Scale="2" />
+          <Property Name="Earnings_History_Next_Year_Surprise(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Company_Current_Qtr(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Industry_Current_Qtr(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Sector_Current_Qtr(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_S&amp;P500_Current_Qtr(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Company_Next_Qtr(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Industry_Next_Qtr(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Sector_Next_Qtr(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_S&amp;P500_Next_Qtr(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Company_This_Year(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Industry_This_Year(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Sector_This_Year(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_S&amp;P500_This_Year(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Company_Next_Year(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Industry_Next_Year(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Sector_Next_Year(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_S&amp;P500_Next_Year(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Company_Past5Years(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Industry_Past5Years(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Sector_Past5Years(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_S&amp;P500_Past5Years(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Company_Next5Years(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Industry_Next5Years(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Sector_Next5Years(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_S&amp;P500_Next5Years(%)" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Company_PriceEarnings" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Industry_PriceEarnings" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Sector_PriceEarnings" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_S&amp;P500_PriceEarnings" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Company_PEGRatio" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Industry_PEGRatio" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_Sector_PEGRatio" Type="numeric" Scale="2" />
+          <Property Name="Growth_Est_S&amp;P500_PEGRatio" Type="numeric" Scale="2" />
+          <Property Name="Group" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="YahooFinance_Analyst_Opinion">
+          <Key>
+            <PropertyRef Name="Identity" />
+          </Key>
+          <Property Name="Identity" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Price" Type="numeric" Nullable="false" Scale="2" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Recomm_ThisWeek" Type="numeric" Scale="1" />
+          <Property Name="Recomm_LastWeek" Type="numeric" Scale="1" />
+          <Property Name="Mean_Target" Type="numeric" Scale="2" />
+          <Property Name="Median_Target" Type="numeric" Scale="2" />
+          <Property Name="High_Target" Type="numeric" Scale="2" />
+          <Property Name="Low_Target" Type="numeric" Scale="2" />
+          <Property Name="No_of_Brokers" Type="bigint" />
+          <Property Name="CurrentMonth_Strong_Buy" Type="numeric" Scale="1" />
+          <Property Name="LastMonth_Strong_Buy" Type="numeric" Scale="1" />
+          <Property Name="TwoMonthsAgo_Strong_Buy" Type="numeric" Scale="1" />
+          <Property Name="ThreeMonthsAgo_Strong_Buy" Type="numeric" Scale="1" />
+          <Property Name="CurrentMonth_Buy" Type="numeric" Scale="1" />
+          <Property Name="LastMonth_Buy" Type="numeric" Scale="1" />
+          <Property Name="TwoMonthsAgo_Buy" Type="numeric" Scale="1" />
+          <Property Name="ThreeMonthsAgo_Buy" Type="numeric" Scale="1" />
+          <Property Name="CurrentMonth_Hold" Type="numeric" Scale="1" />
+          <Property Name="LastMonth_Hold" Type="numeric" Scale="1" />
+          <Property Name="TwoMonthsAgo_Hold" Type="numeric" Scale="1" />
+          <Property Name="ThreeMonthsAgo_Hold" Type="numeric" Scale="1" />
+          <Property Name="CurrentMonth_Underperform" Type="numeric" Scale="1" />
+          <Property Name="LastMonth_Underperform" Type="numeric" Scale="1" />
+          <Property Name="TwoMonthsAgo_Underperform" Type="numeric" Scale="1" />
+          <Property Name="ThreeMonthsAgo_Underperform" Type="numeric" Scale="1" />
+          <Property Name="CurrentMonth_Sell" Type="numeric" Scale="1" />
+          <Property Name="LastMonth_Sell" Type="numeric" Scale="1" />
+          <Property Name="TwoMonthsAgo_Sell" Type="numeric" Scale="1" />
+          <Property Name="ThreeMonthsAgo_Sell" Type="numeric" Scale="1" />
+          <Property Name="Group" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="YahooFinance_Market_Data">
+          <Key>
+            <PropertyRef Name="Identity" />
+          </Key>
+          <Property Name="Identity" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Recorded_Date" Type="datetime" Nullable="false" />
+          <Property Name="Price" Type="numeric" Scale="2" />
+          <Property Name="Low_Price" Type="numeric" Scale="2" />
+          <Property Name="High_Price" Type="numeric" Scale="2" />
+          <Property Name="52wk_Low" Type="numeric" Scale="2" />
+          <Property Name="52wk_High" Type="numeric" Scale="2" />
+          <Property Name="52wk_Avg" Type="numeric" Scale="2" />
+          <Property Name="Volume" Type="bigint" />
+          <Property Name="Avg_Vol(3m)" Type="bigint" />
+          <Property Name="Beta" Type="nvarchar" MaxLength="50" />
+          <Property Name="Market_Cap(b)" Type="numeric" Scale="2" />
+          <Property Name="P/E(ttm)" Type="numeric" Scale="2" />
+          <Property Name="EPS(ttm)" Type="numeric" Scale="2" />
+          <Property Name="Group" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FinanceCrawlerModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="FinanceCrawlerEntities" p1:LazyLoadingEnabled="true" >
+          <EntitySet Name="YahooFinance_Analyst_Opinion" EntityType="FinanceCrawlerModel.YahooFinance_Analyst_Opinion" />
+          <EntitySet Name="YahooFinance_Analyst_Estimates" EntityType="FinanceCrawlerModel.YahooFinance_Analyst_Estimates" />
+          <EntitySet Name="YahooFinance_Market_Data" EntityType="FinanceCrawlerModel.YahooFinance_Market_Data" />
+        </EntityContainer>
+        <EntityType Name="YahooFinance_Analyst_Opinion">
+          <Key>
+            <PropertyRef Name="Identity" />
+          </Key>
+          <Property Type="Int64" Name="Identity" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Price" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
+          <Property Type="Decimal" Name="Recomm_ThisWeek" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="Recomm_LastWeek" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="Mean_Target" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Median_Target" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="High_Target" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Low_Target" Precision="18" Scale="2" />
+          <Property Type="Int64" Name="No_of_Brokers" />
+          <Property Type="Decimal" Name="CurrentMonth_Strong_Buy" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="LastMonth_Strong_Buy" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="TwoMonthsAgo_Strong_Buy" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="ThreeMonthsAgo_Strong_Buy" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="CurrentMonth_Buy" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="LastMonth_Buy" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="TwoMonthsAgo_Buy" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="ThreeMonthsAgo_Buy" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="CurrentMonth_Hold" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="LastMonth_Hold" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="TwoMonthsAgo_Hold" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="ThreeMonthsAgo_Hold" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="CurrentMonth_Underperform" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="LastMonth_Underperform" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="TwoMonthsAgo_Underperform" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="ThreeMonthsAgo_Underperform" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="CurrentMonth_Sell" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="LastMonth_Sell" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="TwoMonthsAgo_Sell" Precision="18" Scale="1" />
+          <Property Type="Decimal" Name="ThreeMonthsAgo_Sell" Precision="18" Scale="1" />
+          <Property Type="String" Name="Group" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="YahooFinance_Analyst_Estimates">
+          <Key>
+            <PropertyRef Name="Identity" />
+          </Key>
+          <Property Type="Int64" Name="Identity" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Price" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="DateTime" Name="Recorded_Date" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="Current_Qtr" Precision="3" />
+          <Property Type="DateTime" Name="Next_Qtr" Precision="3" />
+          <Property Type="DateTime" Name="Current_Year" Precision="3" />
+          <Property Type="DateTime" Name="Next_Year" Precision="3" />
+          <Property Type="Decimal" Name="Earning_Est_Current_Year_Avg_Estimate" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Earning_Est_Next_Year_Avg_Estimate" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Earning_Est_Current_Year_Year_Ago_EPS" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Earning_Est_Next_Year_Year_Ago_EPS" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Revenue_Est_Current_Year_Avg_Estimate" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Revenue_Est_Next_Year_Avg_Estimate" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Revenue_Est_Current_Year_Year_Ago_Sales" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Revenue_Est_Next_Year_Year_Ago_Sales" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Earnings_History_Current_Year_EPS_Est" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Earnings_History_Next_Year_EPS_Est" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Earnings_History_Current_Year_EPS_Actual" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Earnings_History_Next_Year_EPS_Actual" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Earnings_History_Current_Year_Difference" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Earnings_History_Next_Year_Difference" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Earnings_History_Current_Year_Surprise___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Earnings_History_Next_Year_Surprise___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Company_Current_Qtr___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Industry_Current_Qtr___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Sector_Current_Qtr___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_S_P500_Current_Qtr___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Company_Next_Qtr___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Industry_Next_Qtr___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Sector_Next_Qtr___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_S_P500_Next_Qtr___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Company_This_Year___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Industry_This_Year___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Sector_This_Year___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_S_P500_This_Year___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Company_Next_Year___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Industry_Next_Year___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Sector_Next_Year___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_S_P500_Next_Year___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Company_Past5Years___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Industry_Past5Years___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Sector_Past5Years___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_S_P500_Past5Years___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Company_Next5Years___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Industry_Next5Years___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Sector_Next5Years___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_S_P500_Next5Years___" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Company_PriceEarnings" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Industry_PriceEarnings" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Sector_PriceEarnings" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_S_P500_PriceEarnings" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Company_PEGRatio" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Industry_PEGRatio" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_Sector_PEGRatio" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Growth_Est_S_P500_PEGRatio" Precision="18" Scale="2" />
+          <Property Type="String" Name="Group" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="YahooFinance_Market_Data">
+          <Key>
+            <PropertyRef Name="Identity" />
+          </Key>
+          <Property Type="Int64" Name="Identity" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Recorded_Date" Nullable="false" Precision="3" />
+          <Property Type="Decimal" Name="Price" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="Low_Price" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="High_Price" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="C52wk_Low" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="C52wk_High" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="C52wk_Avg" Precision="18" Scale="2" />
+          <Property Type="Int64" Name="Volume" />
+          <Property Type="Int64" Name="Avg_Vol_3m_" />
+          <Property Type="String" Name="Beta" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="Market_Cap_b_" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="P_E_ttm_" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="EPS_ttm_" Precision="18" Scale="2" />
+          <Property Type="String" Name="Group" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FinanceCrawlerModelStoreContainer" CdmEntityContainer="FinanceCrawlerEntities" >
+          <EntitySetMapping Name="YahooFinance_Analyst_Opinion">
+            <EntityTypeMapping TypeName="FinanceCrawlerModel.YahooFinance_Analyst_Opinion">
+              <MappingFragment StoreEntitySet="YahooFinance_Analyst_Opinion">
+                <ScalarProperty Name="Group" ColumnName="Group" />
+                <ScalarProperty Name="ThreeMonthsAgo_Sell" ColumnName="ThreeMonthsAgo_Sell" />
+                <ScalarProperty Name="TwoMonthsAgo_Sell" ColumnName="TwoMonthsAgo_Sell" />
+                <ScalarProperty Name="LastMonth_Sell" ColumnName="LastMonth_Sell" />
+                <ScalarProperty Name="CurrentMonth_Sell" ColumnName="CurrentMonth_Sell" />
+                <ScalarProperty Name="ThreeMonthsAgo_Underperform" ColumnName="ThreeMonthsAgo_Underperform" />
+                <ScalarProperty Name="TwoMonthsAgo_Underperform" ColumnName="TwoMonthsAgo_Underperform" />
+                <ScalarProperty Name="LastMonth_Underperform" ColumnName="LastMonth_Underperform" />
+                <ScalarProperty Name="CurrentMonth_Underperform" ColumnName="CurrentMonth_Underperform" />
+                <ScalarProperty Name="ThreeMonthsAgo_Hold" ColumnName="ThreeMonthsAgo_Hold" />
+                <ScalarProperty Name="TwoMonthsAgo_Hold" ColumnName="TwoMonthsAgo_Hold" />
+                <ScalarProperty Name="LastMonth_Hold" ColumnName="LastMonth_Hold" />
+                <ScalarProperty Name="CurrentMonth_Hold" ColumnName="CurrentMonth_Hold" />
+                <ScalarProperty Name="ThreeMonthsAgo_Buy" ColumnName="ThreeMonthsAgo_Buy" />
+                <ScalarProperty Name="TwoMonthsAgo_Buy" ColumnName="TwoMonthsAgo_Buy" />
+                <ScalarProperty Name="LastMonth_Buy" ColumnName="LastMonth_Buy" />
+                <ScalarProperty Name="CurrentMonth_Buy" ColumnName="CurrentMonth_Buy" />
+                <ScalarProperty Name="ThreeMonthsAgo_Strong_Buy" ColumnName="ThreeMonthsAgo_Strong_Buy" />
+                <ScalarProperty Name="TwoMonthsAgo_Strong_Buy" ColumnName="TwoMonthsAgo_Strong_Buy" />
+                <ScalarProperty Name="LastMonth_Strong_Buy" ColumnName="LastMonth_Strong_Buy" />
+                <ScalarProperty Name="CurrentMonth_Strong_Buy" ColumnName="CurrentMonth_Strong_Buy" />
+                <ScalarProperty Name="No_of_Brokers" ColumnName="No_of_Brokers" />
+                <ScalarProperty Name="Low_Target" ColumnName="Low_Target" />
+                <ScalarProperty Name="High_Target" ColumnName="High_Target" />
+                <ScalarProperty Name="Median_Target" ColumnName="Median_Target" />
+                <ScalarProperty Name="Mean_Target" ColumnName="Mean_Target" />
+                <ScalarProperty Name="Recomm_LastWeek" ColumnName="Recomm_LastWeek" />
+                <ScalarProperty Name="Recomm_ThisWeek" ColumnName="Recomm_ThisWeek" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Identity" ColumnName="Identity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YahooFinance_Analyst_Estimates">
+            <EntityTypeMapping TypeName="FinanceCrawlerModel.YahooFinance_Analyst_Estimates">
+              <MappingFragment StoreEntitySet="YahooFinance_Analyst_Estimates">
+                <ScalarProperty Name="Group" ColumnName="Group" />
+                <ScalarProperty Name="Growth_Est_S_P500_PEGRatio" ColumnName="Growth_Est_S&amp;P500_PEGRatio" />
+                <ScalarProperty Name="Growth_Est_Sector_PEGRatio" ColumnName="Growth_Est_Sector_PEGRatio" />
+                <ScalarProperty Name="Growth_Est_Industry_PEGRatio" ColumnName="Growth_Est_Industry_PEGRatio" />
+                <ScalarProperty Name="Growth_Est_Company_PEGRatio" ColumnName="Growth_Est_Company_PEGRatio" />
+                <ScalarProperty Name="Growth_Est_S_P500_PriceEarnings" ColumnName="Growth_Est_S&amp;P500_PriceEarnings" />
+                <ScalarProperty Name="Growth_Est_Sector_PriceEarnings" ColumnName="Growth_Est_Sector_PriceEarnings" />
+                <ScalarProperty Name="Growth_Est_Industry_PriceEarnings" ColumnName="Growth_Est_Industry_PriceEarnings" />
+                <ScalarProperty Name="Growth_Est_Company_PriceEarnings" ColumnName="Growth_Est_Company_PriceEarnings" />
+                <ScalarProperty Name="Growth_Est_S_P500_Next5Years___" ColumnName="Growth_Est_S&amp;P500_Next5Years(%)" />
+                <ScalarProperty Name="Growth_Est_Sector_Next5Years___" ColumnName="Growth_Est_Sector_Next5Years(%)" />
+                <ScalarProperty Name="Growth_Est_Industry_Next5Years___" ColumnName="Growth_Est_Industry_Next5Years(%)" />
+                <ScalarProperty Name="Growth_Est_Company_Next5Years___" ColumnName="Growth_Est_Company_Next5Years(%)" />
+                <ScalarProperty Name="Growth_Est_S_P500_Past5Years___" ColumnName="Growth_Est_S&amp;P500_Past5Years(%)" />
+                <ScalarProperty Name="Growth_Est_Sector_Past5Years___" ColumnName="Growth_Est_Sector_Past5Years(%)" />
+                <ScalarProperty Name="Growth_Est_Industry_Past5Years___" ColumnName="Growth_Est_Industry_Past5Years(%)" />
+                <ScalarProperty Name="Growth_Est_Company_Past5Years___" ColumnName="Growth_Est_Company_Past5Years(%)" />
+                <ScalarProperty Name="Growth_Est_S_P500_Next_Year___" ColumnName="Growth_Est_S&amp;P500_Next_Year(%)" />
+                <ScalarProperty Name="Growth_Est_Sector_Next_Year___" ColumnName="Growth_Est_Sector_Next_Year(%)" />
+                <ScalarProperty Name="Growth_Est_Industry_Next_Year___" ColumnName="Growth_Est_Industry_Next_Year(%)" />
+                <ScalarProperty Name="Growth_Est_Company_Next_Year___" ColumnName="Growth_Est_Company_Next_Year(%)" />
+                <ScalarProperty Name="Growth_Est_S_P500_This_Year___" ColumnName="Growth_Est_S&amp;P500_This_Year(%)" />
+                <ScalarProperty Name="Growth_Est_Sector_This_Year___" ColumnName="Growth_Est_Sector_This_Year(%)" />
+                <ScalarProperty Name="Growth_Est_Industry_This_Year___" ColumnName="Growth_Est_Industry_This_Year(%)" />
+                <ScalarProperty Name="Growth_Est_Company_This_Year___" ColumnName="Growth_Est_Company_This_Year(%)" />
+                <ScalarProperty Name="Growth_Est_S_P500_Next_Qtr___" ColumnName="Growth_Est_S&amp;P500_Next_Qtr(%)" />
+                <ScalarProperty Name="Growth_Est_Sector_Next_Qtr___" ColumnName="Growth_Est_Sector_Next_Qtr(%)" />
+                <ScalarProperty Name="Growth_Est_Industry_Next_Qtr___" ColumnName="Growth_Est_Industry_Next_Qtr(%)" />
+                <ScalarProperty Name="Growth_Est_Company_Next_Qtr___" ColumnName="Growth_Est_Company_Next_Qtr(%)" />
+                <ScalarProperty Name="Growth_Est_S_P500_Current_Qtr___" ColumnName="Growth_Est_S&amp;P500_Current_Qtr(%)" />
+                <ScalarProperty Name="Growth_Est_Sector_Current_Qtr___" ColumnName="Growth_Est_Sector_Current_Qtr(%)" />
+                <ScalarProperty Name="Growth_Est_Industry_Current_Qtr___" ColumnName="Growth_Est_Industry_Current_Qtr(%)" />
+                <ScalarProperty Name="Growth_Est_Company_Current_Qtr___" ColumnName="Growth_Est_Company_Current_Qtr(%)" />
+                <ScalarProperty Name="Earnings_History_Next_Year_Surprise___" ColumnName="Earnings_History_Next_Year_Surprise(%)" />
+                <ScalarProperty Name="Earnings_History_Current_Year_Surprise___" ColumnName="Earnings_History_Current_Year_Surprise(%)" />
+                <ScalarProperty Name="Earnings_History_Next_Year_Difference" ColumnName="Earnings_History_Next_Year_Difference" />
+                <ScalarProperty Name="Earnings_History_Current_Year_Difference" ColumnName="Earnings_History_Current_Year_Difference" />
+                <ScalarProperty Name="Earnings_History_Next_Year_EPS_Actual" ColumnName="Earnings_History_Next_Year_EPS_Actual" />
+                <ScalarProperty Name="Earnings_History_Current_Year_EPS_Actual" ColumnName="Earnings_History_Current_Year_EPS_Actual" />
+                <ScalarProperty Name="Earnings_History_Next_Year_EPS_Est" ColumnName="Earnings_History_Next_Year_EPS_Est" />
+                <ScalarProperty Name="Earnings_History_Current_Year_EPS_Est" ColumnName="Earnings_History_Current_Year_EPS_Est" />
+                <ScalarProperty Name="Revenue_Est_Next_Year_Year_Ago_Sales" ColumnName="Revenue_Est_Next_Year_Year_Ago_Sales" />
+                <ScalarProperty Name="Revenue_Est_Current_Year_Year_Ago_Sales" ColumnName="Revenue_Est_Current_Year_Year_Ago_Sales" />
+                <ScalarProperty Name="Revenue_Est_Next_Year_Avg_Estimate" ColumnName="Revenue_Est_Next_Year_Avg.Estimate" />
+                <ScalarProperty Name="Revenue_Est_Current_Year_Avg_Estimate" ColumnName="Revenue_Est_Current_Year_Avg.Estimate" />
+                <ScalarProperty Name="Earning_Est_Next_Year_Year_Ago_EPS" ColumnName="Earning_Est_Next_Year_Year_Ago_EPS" />
+                <ScalarProperty Name="Earning_Est_Current_Year_Year_Ago_EPS" ColumnName="Earning_Est_Current_Year_Year_Ago_EPS" />
+                <ScalarProperty Name="Earning_Est_Next_Year_Avg_Estimate" ColumnName="Earning_Est_Next_Year_Avg.Estimate" />
+                <ScalarProperty Name="Earning_Est_Current_Year_Avg_Estimate" ColumnName="Earning_Est_Current_Year_Avg.Estimate" />
+                <ScalarProperty Name="Next_Year" ColumnName="Next_Year" />
+                <ScalarProperty Name="Current_Year" ColumnName="Current_Year" />
+                <ScalarProperty Name="Next_Qtr" ColumnName="Next_Qtr" />
+                <ScalarProperty Name="Current_Qtr" ColumnName="Current_Qtr" />
+                <ScalarProperty Name="Recorded_Date" ColumnName="Recorded_Date" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Identity" ColumnName="Identity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YahooFinance_Market_Data">
+            <EntityTypeMapping TypeName="FinanceCrawlerModel.YahooFinance_Market_Data">
+              <MappingFragment StoreEntitySet="YahooFinance_Market_Data">
+                <ScalarProperty Name="Group" ColumnName="Group" />
+                <ScalarProperty Name="EPS_ttm_" ColumnName="EPS(ttm)" />
+                <ScalarProperty Name="P_E_ttm_" ColumnName="P/E(ttm)" />
+                <ScalarProperty Name="Market_Cap_b_" ColumnName="Market_Cap(b)" />
+                <ScalarProperty Name="Beta" ColumnName="Beta" />
+                <ScalarProperty Name="Avg_Vol_3m_" ColumnName="Avg_Vol(3m)" />
+                <ScalarProperty Name="Volume" ColumnName="Volume" />
+                <ScalarProperty Name="C52wk_Avg" ColumnName="52wk_Avg" />
+                <ScalarProperty Name="C52wk_High" ColumnName="52wk_High" />
+                <ScalarProperty Name="C52wk_Low" ColumnName="52wk_Low" />
+                <ScalarProperty Name="High_Price" ColumnName="High_Price" />
+                <ScalarProperty Name="Low_Price" ColumnName="Low_Price" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Recorded_Date" ColumnName="Recorded_Date" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Identity" ColumnName="Identity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
