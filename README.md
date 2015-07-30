@@ -1,2 +1,2 @@
 # YahooFinance
-Analyst Opinions, Estimates and Market data - Web Crawling
+Analyst Opinions, Estimates and Market data - Web Scraping
